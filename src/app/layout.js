@@ -1,6 +1,7 @@
 'use client'
 import './globals.css'
 import Navigation from '@/components/navigation/navigation-component'
+import { Footer } from '@/components/footer/Footer' // Import your existing Footer component
 import { usePathname } from 'next/navigation'
 
 import { Roboto } from 'next/font/google'
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <body className={roboto.className}>
         <Navigation />
         {children}
+        {!(isHomePage || pathname === '/contact') && <Footer />}
       </body>
     </html>
   )

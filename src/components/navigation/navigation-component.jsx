@@ -5,8 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const navItems = [
   { label: "Work", href: "/work" },
@@ -21,7 +21,7 @@ export default function Navigation() {
   const isHome = pathname === "/";
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-8", {
+    <header className={cn("fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-4", {
       "bg-transparent": isHome,
       "bg-white dark:bg-black": !isHome,
     })}>
@@ -30,7 +30,7 @@ export default function Navigation() {
         <Link
           href="/"
           className={cn(
-            "text-4xl md:text-5xl font-light tracking-wider hover:opacity-80 transition-opacity z-50",
+            "text-4xl md:text-5xl tracking-wider hover:opacity-80 transition-opacity z-50",
             isHome ? "text-white" : "text-black dark:text-white"
           )}
         >
@@ -45,9 +45,11 @@ export default function Navigation() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "text-xl font-light tracking-wide hover:opacity-80 transition-opacity",
+                    "text-xl tracking-wide transition-opacity",
                     isHome ? "text-white" : "text-black dark:text-white",
-                    pathname === item.href && "opacity-80"
+                    pathname === item.href
+                      ? "opacity-100 font-bold"
+                      : "opacity-80 hover:opacity-100"
                   )}
                 >
                   {item.label}
@@ -62,34 +64,71 @@ export default function Navigation() {
         <div className="md:hidden flex items-center gap-4">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <button
-                className={cn(
-                  "z-50",
-                  isHome ? "text-white" : "text-black dark:text-white"
-                )}
-                aria-label="Toggle menu"
-              >
-                {open ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
-              </button>
+              {typeof window !== 'undefined' && (
+                <button
+                  className={cn(
+                    "z-50",
+                    isHome ? "text-white" : "text-black dark:text-white"
+                  )}
+                  aria-label="Toggle menu"
+                >
+                  <Menu className="h-10 w-10" />
+                </button>
+              )}
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-black/95 dark:bg-black/95 border-white/10 backdrop-blur-sm w-[300px] sm:w-[400px] [&>button]:hidden"
+              className="bg-black/95 dark:bg-black/95 border-none w-full h-full flex flex-col"
             >
-              <div className="flex flex-col gap-8 mt-12">
+              <VisuallyHidden>
+                <SheetTitle>Menu</SheetTitle>
+              </VisuallyHidden>
+              <div className="flex items-center justify-between p-6">
+                <Link
+                  href="/"
+                  className="text-white text-4xl tracking-wider"
+                  onClick={() => setOpen(false)}
+                >
+                  OFA
+                </Link>
+                <button
+                  className="text-white"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <X className="h-8 w-8" />
+                </button>
+              </div>
+              <div className="flex flex-col items-center justify-center gap-8 flex-1">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "text-white text-3xl tracking-wide hover:opacity-80 transition-opacity",
-                      pathname === item.href && "opacity-80"
+                      "text-white text-3xl tracking-wide transition-opacity",
+                      pathname === item.href
+                        ? "opacity-100 font-bold"
+                        : "opacity-80 hover:opacity-100"
                     )}
                   >
                     {item.label}
                   </Link>
                 ))}
+              </div>
+              <div className="p-6 text-center text-white/50">
+                <p>&copy; {new Date().getFullYear()} OFA</p>
+                <div className="flex items-center justify-center gap-4 mt-4">
+                  <Link href="#" className="hover:text-white">
+                    IG
+                  </Link>
+                  <Link href="#" className="hover:text-white">
+                    TW
+                  </Link>
+                  <Link href="#" className="hover:text-white">
+                    LI
+                  </Link>
+                </div>
               </div>
             </SheetContent>
           </Sheet>

@@ -26,7 +26,7 @@ export function ProjectSlide({ title, category, location, imageUrl, projectSlug 
             {category} | {location}
           </p>
 
-          <Link href={`/projects/${projectSlug}`}>
+          <Link href={`/work/${projectSlug}`}>
             <Button
               variant="ghost"
               className="text-white text-base md:text-lg font-light tracking-wider px-0 hover:bg-transparent hover:opacity-80 transition-opacity group"

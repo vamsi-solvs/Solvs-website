@@ -8,26 +8,26 @@ const projects = [
     category: "Residential",
     location: "Bengaluru",
     imageUrl:
-      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      "landingPage/Balehonnur.png",
     projectSlug: "balehonnur",
   },
   {
     id: "2",
     title: "Urban Oasis",
     category: "Commercial",
-    location: "Mumbai",
+    location: "Bengaluru",
     imageUrl:
-      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    projectSlug: "urban-oasis",
+      "landingPage/BagmanneSierra.png",
+    projectSlug: "Bagmanne-Sierra",
   },
   {
     id: "3",
-    title: "Skyline Villa",
-    category: "Residential",
-    location: "Delhi",
+    title: "Balia Bus Stand",
+    category: "Commercial",
+    location: "Bengaluru",
     imageUrl:
-      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    projectSlug: "skyline-villa",
+      "landingPage/BaliaBusStand.png",
+    projectSlug: "Balia-Bus-Stand",
   },
 ];
 
