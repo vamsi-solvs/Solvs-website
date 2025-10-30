@@ -64,17 +64,15 @@ export default function Navigation() {
         <div className="md:hidden flex items-center gap-4">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              {typeof window !== 'undefined' && (
-                <button
-                  className={cn(
-                    "z-50",
-                    isHome ? "text-white" : "text-black dark:text-white"
-                  )}
-                  aria-label="Toggle menu"
-                >
-                  <Menu className="h-10 w-10" />
-                </button>
-              )}
+              <button
+                className={cn(
+                  "z-50",
+                  isHome ? "text-white" : "text-black dark:text-white"
+                )}
+                aria-label="Toggle menu"
+              >
+                <Menu className="h-10 w-10" />
+              </button>
             </SheetTrigger>
             <SheetContent
               side="right"
