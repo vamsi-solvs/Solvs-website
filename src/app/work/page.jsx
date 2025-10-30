@@ -1,8 +1,18 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import Link from "next/link"; // Import Link
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+
+// Helper function to generate a slug
+const generateSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "") // Remove non-alphanumeric characters except spaces and hyphens
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-"); // Replace multiple hyphens with a single hyphen
+};
 
 const projects = [
   {
@@ -12,6 +22,7 @@ const projects = [
     title: "Balehonnur",
     location: "Bengaluru",
     category: "Residential",
+    slug: generateSlug("Balehonnur"),
   },
   {
     id: "2",
@@ -20,6 +31,7 @@ const projects = [
     title: "Urban Edge",
     location: "Hyderabad",
     category: "Commercial",
+    slug: generateSlug("Urban Edge"),
   },
   {
     id: "3",
@@ -28,6 +40,7 @@ const projects = [
     title: "Palm Court",
     location: "Goa",
     category: "Residential",
+    slug: generateSlug("Palm Court"),
   },
   {
     id: "4",
@@ -36,6 +49,7 @@ const projects = [
     title: "Green Axis",
     location: "Chennai",
     category: "Master Planning",
+    slug: generateSlug("Green Axis"),
   },
   {
     id: "5",
@@ -44,6 +58,7 @@ const projects = [
     title: "Civic Pavilion",
     location: "Pune",
     category: "Public",
+    slug: generateSlug("Civic Pavilion"),
   },
   {
     id: "6",
@@ -52,6 +67,7 @@ const projects = [
     title: "Azure Villa",
     location: "Kochi",
     category: "Villas",
+    slug: generateSlug("Azure Villa"),
   },
   {
     id: "7",
@@ -60,6 +76,7 @@ const projects = [
     title: "Haven Rise",
     location: "Bengaluru",
     category: "Residential",
+    slug: generateSlug("Haven Rise"),
   },
 ];
 
@@ -114,22 +131,26 @@ export default function WorkPage() {
               key={project.id}
               className="group relative overflow-hidden break-inside-avoid cursor-pointer"
             >
-              {/* Image */}
-              <Image
-                src={project.imageUrl}
-                alt={project.title}
-                width={800}
-                height={600}
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              <Link href={`/work/${project.slug}`}>
+                {/* Image */}
+                <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                />
 
-              {/* Hover details bar */}
-              <div className="absolute inset-x-0 bottom-0 bg-white/90 text-center py-4 opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <h3 className="text-black text-lg font-semibold">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 text-sm">{project.location}</p>
-              </div>
+                {/* Hover details bar */}
+                <div className="absolute inset-x-0 bottom-0 bg-white/90 text-center py-4 opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <h3 className="text-black text-lg font-semibold">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {project.location}
+                  </p>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
