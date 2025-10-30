@@ -108,7 +108,7 @@
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.556 0 0);
 }
 
@@ -118,5 +118,17 @@
   }
   body {
     @apply bg-background text-foreground pt-24;
+  }
+}
+
+.animated-icon path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 4s linear forwards infinite; /* Changed duration to 4s */
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
   }
 }
