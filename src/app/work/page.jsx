@@ -2,62 +2,64 @@
 
 import { useState, useTransition } from "react";
 import { cn } from "@/lib/utils";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import Image from "next/image";
 
 const projects = [
   {
     id: "1",
-    title: "Balehonnur",
-    category: "Residential",
-    location: "Bengaluru",
     imageUrl:
       "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Balehonnur",
+    location: "Bengaluru",
+    category: "Residential",
   },
   {
     id: "2",
-    title: "Urban Oasis",
-    category: "Commercial",
-    location: "Mumbai",
     imageUrl:
       "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Urban Edge",
+    location: "Hyderabad",
+    category: "Commercial",
   },
   {
     id: "3",
-    title: "Skyline Villa",
-    category: "Residential",
-    location: "Delhi",
     imageUrl:
       "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Palm Court",
+    location: "Goa",
+    category: "Residential",
   },
   {
     id: "4",
-    title: "Green City Masterplan",
-    category: "Master Planning",
-    location: "Hyderabad",
     imageUrl:
       "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Green Axis",
+    location: "Chennai",
+    category: "Master Planning",
   },
   {
     id: "5",
-    title: "Public Library",
-    category: "Public",
-    location: "Chennai",
     imageUrl:
       "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Civic Pavilion",
+    location: "Pune",
+    category: "Public",
   },
   {
     id: "6",
-    title: "Luxury Villas",
-    category: "Villas",
-    location: "Goa",
     imageUrl:
       "https://images.pexels.com/photos/164005/pexels-photo-164005.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Azure Villa",
+    location: "Kochi",
+    category: "Villas",
+  },
+  {
+    id: "7",
+    imageUrl:
+      "https://images.pexels.com/photos/2611875/pexels-photo-2611875.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Haven Rise",
+    location: "Bengaluru",
+    category: "Residential",
   },
 ];
 
@@ -69,25 +71,6 @@ const filterOptions = [
   "Residential",
   "Villas",
 ];
-
-function MobileFilter({ activeFilter, onChange }) {
-  return (
-    <div className="md:hidden w-full max-w-[200px]">
-      <Select onValueChange={onChange} value={activeFilter}>
-        <SelectTrigger className="w-full">
-          <SelectValue placeholder="Filter Projects" />
-        </SelectTrigger>
-        <SelectContent>
-          {filterOptions.map((option) => (
-            <SelectItem key={option} value={option}>
-              {option}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-    </div>
-  );
-}
 
 export default function WorkPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -102,54 +85,54 @@ export default function WorkPage() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-5">
-      {/* Filter Controls */}
-      <div className="flex justify-end mb-8">
-        {/* Desktop Filters */}
-        <div className="hidden md:flex space-x-10">
+    <div className="min-h-screen bg-white">
+      {/* Filter Navigation */}
+      <nav className="flex justify-end items-center px-12 py-6 bg-white">
+        <div className="flex space-x-8 text-lg">
           {filterOptions.map((option) => (
             <button
               key={option}
               onClick={() => handleFilterChange(option)}
               className={cn(
-                "text-lg tracking-wide transition-colors duration-150",
+                "transition-colors duration-150",
                 activeFilter === option
                   ? "text-black font-semibold"
-                  : "text-gray-500 font-normal hover:text-gray-700"
+                  : "text-gray-500 hover:text-black"
               )}
             >
               {option}
             </button>
           ))}
         </div>
+      </nav>
 
-        {/* Mobile Filter */}
-        <MobileFilter activeFilter={activeFilter} onChange={handleFilterChange} />
-      </div>
+      {/* Masonry Grid with hover info */}
+      <div className="max-w-7xl mx-auto px-8 pb-20 pt-8">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          {filteredProjects.map((project) => (
+            <div
+              key={project.id}
+              className="group relative overflow-hidden break-inside-avoid cursor-pointer"
+            >
+              {/* Image */}
+              <Image
+                src={project.imageUrl}
+                alt={project.title}
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              />
 
-      {/* Heading */}
-      <h1 className="text-4xl font-bold mb-8">Our Work</h1>
-
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects.map((project) => (
-          <div
-            key={project.id}
-            className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-          >
-            <img
-              src={project.imageUrl}
-              alt={project.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">{project.title}</h2>
-              <p className="text-gray-600">
-                {project.category} – {project.location}
-              </p>
+              {/* Hover details bar */}
+              <div className="absolute inset-x-0 bottom-0 bg-white/90 text-center py-4 opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <h3 className="text-black text-lg font-semibold">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{project.location}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
