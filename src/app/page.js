@@ -13,7 +13,7 @@ const projects = [
   },
   {
     id: "2",
-    title: "Urban Oasis",
+    title: "Bagmanne Sierra",
     category: "Commercial",
     location: "Bengaluru",
     imageUrl:

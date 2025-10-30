@@ -14,7 +14,7 @@ export const projects = [
   {
     id: "1",
     imageUrl:
-      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      "/landingPage/Balehonnur.png",
     title: "Balehonnur",
     location: "Bengaluru",
     category: "Residential",
@@ -37,11 +37,11 @@ export const projects = [
   {
     id: "2",
     imageUrl:
-      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    title: "Urban Edge",
-    location: "Hyderabad",
+      "/landingPage/BagmanneSierra.png",
+    title: "Bagmanne Sierra",
+    location: "Bengaluru",
     category: "Commercial",
-    slug: generateSlug("Urban Edge"),
+    slug: generateSlug("Bagmanne-Sierra"),
     description:
       "A state-of-the-art commercial complex designed for modern businesses, featuring flexible office spaces and retail outlets.",
     details:
@@ -60,11 +60,11 @@ export const projects = [
   {
     id: "3",
     imageUrl:
-      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    title: "Palm Court",
-    location: "Goa",
-    category: "Residential",
-    slug: generateSlug("Palm Court"),
+      "/landingPage/BaliaBusStand.png",
+    title: "Balia Bus Stand",
+    location: "Bengaluru",
+    category: "Commercial",
+    slug: generateSlug("Balia Bus Stand"),
     description:
       "Luxurious villas nestled amidst lush greenery, offering a tranquil escape with private pools and stunning views.",
     details:

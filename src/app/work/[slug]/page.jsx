@@ -5,19 +5,15 @@ import Link from "next/link";
 import ProjectCarousel from "@/features/work/components/ProjectCarousel";
 import ProjectDetails from "@/features/work/components/ProjectDetails";
 import { projects } from "@/utils/projects";
+import NotFound from "@/components/not-found/NotFound";
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();
-  const project = projects.find((p) => p.slug === slug);
+  const project = projects.find((p) => p.slug === slug.toLowerCase());
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white text-black">
-        <h1 className="text-4xl font-bold">Project Not Found</h1>
-        <Link href="/work" className="text-blue-500 hover:underline ml-4">
-          Go back to Work
-        </Link>
-      </div>
+     <NotFound />
     );
   }
 
