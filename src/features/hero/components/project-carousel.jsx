@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { ProjectSlide } from "./projectSlide";
 import { cn } from "@/lib/utils";
+import Autoplay from "embla-carousel-autoplay";
 
 export function ProjectCarousel({ projects }) {
   const [api, setApi] = useState();
@@ -54,8 +55,13 @@ export function ProjectCarousel({ projects }) {
   );
 
   return (
-    <div className="relative h-screen w-full bg-white dark:bg-black transition-colors">
+    <div className="relative h-screen w-full bg-black transition-colors">
       <Carousel
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
         setApi={setApi}
         opts={{
           align: "start",
@@ -87,8 +93,8 @@ export function ProjectCarousel({ projects }) {
             className={cn(
               "h-1 transition-all duration-300",
               current === index
-                ? "w-16 bg-foreground"
-                : "w-8 bg-foreground/50 hover:bg-foreground/70"
+                ? "w-16 bg-white"
+                : "w-8 bg-white/50 hover:bg-white/70"
             )}
             aria-label={`Go to slide ${index + 1}`}
           />

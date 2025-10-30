@@ -1,10 +1,14 @@
 'use client'
 import './globals.css'
-import { Inter } from 'next/font/google'
 import Navigation from '@/components/navigation/navigation-component'
 import { usePathname } from 'next/navigation'
 
-const inter = Inter({ subsets: ['latin'] })
+import { Roboto } from 'next/font/google'
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+})
 
 export default function RootLayout({ children }) {
   const pathname = usePathname()
@@ -12,7 +16,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <Navigation />
         {children}
       </body>

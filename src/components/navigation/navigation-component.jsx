@@ -29,7 +29,10 @@ export default function Navigation() {
         {/* ✅ Correct use of Link for Next.js */}
         <Link
           href="/"
-          className="text-black dark:text-white text-4xl md:text-5xl font-light tracking-wider hover:opacity-80 transition-opacity z-50"
+          className={cn(
+            "text-4xl md:text-5xl font-light tracking-wider hover:opacity-80 transition-opacity z-50",
+            isHome ? "text-white" : "text-black dark:text-white"
+          )}
         >
           OFA
         </Link>
@@ -42,7 +45,8 @@ export default function Navigation() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "text-black dark:text-white text-xl font-light tracking-wide hover:opacity-80 transition-opacity",
+                    "text-xl font-light tracking-wide hover:opacity-80 transition-opacity",
+                    isHome ? "text-white" : "text-black dark:text-white",
                     pathname === item.href && "opacity-80"
                   )}
                 >
@@ -59,7 +63,10 @@ export default function Navigation() {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <button
-                className="text-black dark:text-white z-50"
+                className={cn(
+                  "z-50",
+                  isHome ? "text-white" : "text-black dark:text-white"
+                )}
                 aria-label="Toggle menu"
               >
                 {open ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
@@ -76,7 +83,7 @@ export default function Navigation() {
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "text-white text-3xl font-light tracking-wide hover:opacity-80 transition-opacity",
+                      "text-white text-3xl tracking-wide hover:opacity-80 transition-opacity",
                       pathname === item.href && "opacity-80"
                     )}
                   >
