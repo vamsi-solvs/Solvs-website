@@ -1,84 +1,10 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import Link from "next/link"; // Import Link
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-
-// Helper function to generate a slug
-const generateSlug = (title) => {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "") // Remove non-alphanumeric characters except spaces and hyphens
-    .replace(/\s+/g, "-") // Replace spaces with hyphens
-    .replace(/-+/g, "-"); // Replace multiple hyphens with a single hyphen
-};
-
-const projects = [
-  {
-    id: "1",
-    imageUrl:
-      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    title: "Balehonnur",
-    location: "Bengaluru",
-    category: "Residential",
-    slug: generateSlug("Balehonnur"),
-  },
-  {
-    id: "2",
-    imageUrl:
-      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    title: "Urban Edge",
-    location: "Hyderabad",
-    category: "Commercial",
-    slug: generateSlug("Urban Edge"),
-  },
-  {
-    id: "3",
-    imageUrl:
-      "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    title: "Palm Court",
-    location: "Goa",
-    category: "Residential",
-    slug: generateSlug("Palm Court"),
-  },
-  {
-    id: "4",
-    imageUrl:
-      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    title: "Green Axis",
-    location: "Chennai",
-    category: "Master Planning",
-    slug: generateSlug("Green Axis"),
-  },
-  {
-    id: "5",
-    imageUrl:
-      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    title: "Civic Pavilion",
-    location: "Pune",
-    category: "Public",
-    slug: generateSlug("Civic Pavilion"),
-  },
-  {
-    id: "6",
-    imageUrl:
-      "https://images.pexels.com/photos/164005/pexels-photo-164005.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    title: "Azure Villa",
-    location: "Kochi",
-    category: "Villas",
-    slug: generateSlug("Azure Villa"),
-  },
-  {
-    id: "7",
-    imageUrl:
-      "https://images.pexels.com/photos/2611875/pexels-photo-2611875.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    title: "Haven Rise",
-    location: "Bengaluru",
-    category: "Residential",
-    slug: generateSlug("Haven Rise"),
-  },
-];
+import { projects } from "@/utils/projects"; 
 
 const filterOptions = [
   "All",
@@ -146,9 +72,7 @@ export default function WorkPage() {
                   <h3 className="text-black text-lg font-semibold">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">
-                    {project.location}
-                  </p>
+                  <p className="text-gray-600 text-sm">{project.location}</p>
                 </div>
               </Link>
             </div>
