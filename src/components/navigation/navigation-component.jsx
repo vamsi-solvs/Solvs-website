@@ -28,37 +28,37 @@ export default function Navigation() {
       <nav className="flex items-center justify-between">
         {/* ✅ Correct use of Link for Next.js */}
         <Link
-          href="/"
-          className={cn(
-            "text-4xl md:text-5xl tracking-wider hover:opacity-80 transition-opacity z-50",
-            isHome ? "text-white" : "text-black dark:text-white"
-          )}
-        >
-          OFA
-        </Link>
+  href="/"
+  className={cn(
+    "font-semibold text-[48px] tracking-wider hover:opacity-80 transition-opacity z-50",
+    isHome ? "text-white" : "text-black dark:text-white"
+  )}
+>
+  OFA
+</Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-12">
-          <ul className="flex items-center gap-12">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "text-xl tracking-wide transition-opacity",
-                    isHome ? "text-white" : "text-black dark:text-white",
-                    pathname === item.href
-                      ? "opacity-100 font-bold"
-                      : "opacity-80 hover:opacity-100"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-        </div>
+  <ul className="flex items-center gap-12">
+    {navItems.map((item) => (
+      <li key={item.href}>
+        <Link
+          href={item.href}
+          className={cn(
+            "font-medium text-[24px] tracking-wide transition-opacity",
+            isHome
+              ? "text-white hover:opacity-80"
+              : pathname === item.href
+              ? "text-black dark:text-white"
+              : "text-[#888888] hover:text-black dark:hover:text-white"
+          )}
+        >
+          {item.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center gap-4">
