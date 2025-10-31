@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { projects } from "@/utils/projects"; 
+import { projects } from "@/utils/projects";
 
 const filterOptions = [
   "All",
@@ -30,24 +30,26 @@ export default function WorkPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Filter Navigation */}
-      <nav className="flex justify-end items-center px-12 py-1 bg-white">
-        <div className="flex space-x-8 text-lg">
-          {filterOptions.map((option) => (
-            <button
-              key={option}
-              onClick={() => handleFilterChange(option)}
-              className={cn(
-                "transition-colors duration-150",
-                activeFilter === option
-                  ? "text-black font-semibold"
-                  : "text-gray-500 hover:text-black"
-              )}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      </nav>
+      <nav className="flex justify-end items-center px-4 md:px-12 py-2 bg-white">
+  <div
+  className="flex space-x-6 md:space-x-8 text-[16px] md:text-[20px] font-medium overflow-x-auto scrollbar-hide md:overflow-visible whitespace-nowrap"
+>
+    {filterOptions.map((option) => (
+      <button
+        key={option}
+        onClick={() => handleFilterChange(option)}
+        className={cn(
+          "transition-colors duration-150 shrink-0",
+          activeFilter === option
+            ? "text-black font-semibold"
+            : "text-gray-500 hover:text-black"
+        )}
+      >
+        {option}
+      </button>
+    ))}
+  </div>
+</nav>
 
       {/* Masonry Grid with hover info */}
       <div className="max-w-7xl mx-auto px-8 pb-20 pt-8">
