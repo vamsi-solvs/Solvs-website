@@ -14,32 +14,20 @@ export function ProjectCarousel({ projects }) {
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
 
-  console.log("Projects:", projects);
-
   useEffect(() => {
-    if (!api) {
-      console.log("API not set");
-      return;
-    }
+    if (!api) return;
 
-    console.log("API is set:", api);
-
-    // Initialize current slide AFTER the effect yields (avoid sync setState)
     const id = requestAnimationFrame(() => {
       const selectedSnap = api.selectedScrollSnap();
-      console.log("Selected snap:", selectedSnap);
       setCurrent(selectedSnap);
     });
 
-    // Subscribe to slide change events
     const onSelect = () => {
       const selectedSnap = api.selectedScrollSnap();
-      console.log("Slide selected:", selectedSnap);
       setCurrent(selectedSnap);
     };
     api.on("select", onSelect);
 
-    // Cleanup on unmount
     return () => {
       cancelAnimationFrame(id);
       api.off("select", onSelect);
@@ -48,7 +36,6 @@ export function ProjectCarousel({ projects }) {
 
   const scrollTo = useCallback(
     (index) => {
-      console.log("Scrolling to:", index);
       api?.scrollTo(index);
     },
     [api]

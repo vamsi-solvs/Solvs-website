@@ -8,7 +8,7 @@ const projects = [
     category: "Residential",
     location: "Bengaluru",
     imageUrl:
-      "landingPage/Balehonnur.png",
+      "/landingPage/Balehonnur.png",
     projectSlug: "balehonnur",
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     category: "Commercial",
     location: "Bengaluru",
     imageUrl:
-      "landingPage/BagmanneSierra.png",
+      "/landingPage/BagmanneSierra.png",
     projectSlug: "Bagmanne-Sierra",
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     category: "Commercial",
     location: "Bengaluru",
     imageUrl:
-      "landingPage/BaliaBusStand.png",
+      "/landingPage/BaliaBusStand.png",
     projectSlug: "Balia-Bus-Stand",
   },
 ];

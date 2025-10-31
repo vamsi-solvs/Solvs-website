@@ -43,18 +43,18 @@ export default function Navigation() {
     {navItems.map((item) => (
       <li key={item.href}>
         <Link
-          href={item.href}
-          className={cn(
-            "font-medium text-[24px] tracking-wide transition-opacity",
-            isHome
-              ? "text-white hover:opacity-80"
-              : pathname === item.href
-              ? "text-black dark:text-white"
-              : "text-[#888888] hover:text-black dark:hover:text-white"
-          )}
-        >
-          {item.label}
-        </Link>
+  href={item.href}
+  className={cn(
+    "font-medium text-[24px] tracking-wide transition-opacity",
+    isHome
+      ? "text-white hover:opacity-80"
+      : pathname.startsWith(item.href)
+      ? "text-black dark:text-white"
+      : "text-[#888888] hover:text-black dark:hover:text-white"
+  )}
+>
+  {item.label}
+</Link>
       </li>
     ))}
   </ul>
