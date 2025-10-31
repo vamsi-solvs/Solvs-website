@@ -30,7 +30,7 @@ export default function WorkPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Filter Navigation */}
-      <nav className="flex justify-end items-center px-12 py-6 bg-white">
+      <nav className="flex justify-end items-center px-12 py-1 bg-white">
         <div className="flex space-x-8 text-lg">
           {filterOptions.map((option) => (
             <button
