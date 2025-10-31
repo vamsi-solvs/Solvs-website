@@ -308,13 +308,13 @@ const ArchitectureSection = () => {
           >
             <blockquote className="text-gray-800 leading-relaxed space-y-4">
               <p className="text-lg md:text-xl font-light italic">
-                "Lorem ipsum dolor sit amet consectetur. Erat curabitur quis
+                &quot;Lorem ipsum dolor sit amet consectetur. Erat curabitur quis
                 sagittis auctor vel suscipit. Viverra pellentesque vel cras etiam
                 at nibh arcu tellus. Sed tortor eros felis placerat sagittis
                 elementum ornare orci convallis. Lectus cras adipiscing tristique
                 bibendum cras et massa elementum dictum. Blandit elit turpis purus
                 pharetra egestas elementum. Feugiat facilisis urna velit etiam
-                ornare parturient dis cursus nisl."
+                ornare parturient dis cursus nisl.&quot;
               </p>
             </blockquote>
           </motion.div>
