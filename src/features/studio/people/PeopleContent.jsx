@@ -1,32 +1,56 @@
-import Image from 'next/image';
-import { peopleData } from '@/utils/people';
+"use client";
 
-// Reusable card component for a single person
+import Image from "next/image";
+import { peopleData } from "@/utils/people";
+
+// Reusable card component
 const PersonCard = ({ imageUrl, name, designation }) => {
   return (
     <div className="flex flex-col items-center text-center p-4">
-      <div className="w-full aspect-square relative mb-4 bg-gray-300 rounded-lg overflow-hidden">
-        {imageUrl ? (
+      {/* Image */}
+      <div className="w-full aspect-square relative mb-6 bg-gray-200 overflow-hidden">
+        {imageUrl && (
           <Image
             src={imageUrl}
             alt={`Photo of ${name}`}
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="
+              object-cover
+              filter grayscale
+              hover:grayscale-0
+              transition-all duration-500 ease-in-out
+            "
+            priority={false}
           />
-        ) : null}
+        )}
       </div>
-      <h3 className="text-xl font-semibold">{name}</h3>
-      <p className="text-md text-gray-600">{designation}</p>
+
+      {/* Name */}
+      <h3 className="font-medium text-[18px] sm:text-[19px] md:text-[20px] text-gray-900 leading-snug">
+        {name}
+      </h3>
+
+      {/* Designation */}
+      <p className="font-normal text-[18px] sm:text-[19px] md:text-[20px] text-gray-700 leading-snug mt-1">
+        {designation}
+      </p>
     </div>
   );
 };
 
-// Main component to display a list of people
+// Main grid
 const PeopleContent = () => {
-
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+    <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12">
+      <div
+        className="
+          grid grid-cols-1
+          sm:grid-cols-2
+          md:grid-cols-3
+          lg:grid-cols-4
+          gap-8
+        "
+      >
         {peopleData.map((person, index) => (
           <PersonCard
             key={index}
