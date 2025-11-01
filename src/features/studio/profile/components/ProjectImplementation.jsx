@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
@@ -14,17 +16,20 @@ const ProjectImplementation = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="w-full">
-        <h1 className="text-4xl md:text-5xl font-bold mb-12 text-gray-900">
+        {/* Section Title */}
+        <h1
+          className="text-2xl sm:text-3xl md:text-[32px] font-semibold mb-12 text-gray-900 leading-tight"
+        >
           Project Implementation at OFA
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Row 1 - Image */}
-          <motion.div 
+          <motion.div
             className="relative h-80 overflow-hidden"
             initial={{ opacity: 0, x: -100 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="absolute inset-0 bg-[#4A7C9E]">
               <div className="absolute inset-0 bg-gradient-to-br from-[#4A7C9E] to-[#5A8CAE]" />
@@ -35,88 +40,35 @@ const ProjectImplementation = () => {
             </div>
           </motion.div>
 
-          {/* Card 01 */}
-          <motion.div 
-            className="border-2 border-gray-900 p-8 flex flex-col justify-between h-80"
-            initial={{ opacity: 0, x: -100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <div className="text-5xl font-light mb-8">01</div>
-            <div>
-              <h2 className="text-lg font-bold mb-4 leading-tight">CLIENT<br />ONBOARDING</h2>
-              <p className="text-sm text-gray-700 leading-snug">
-                Once you contact us, we&apos;ll schedule an initial meeting to understand your needs, goals, and vision for the project.
-              </p>
-            </div>
-          </motion.div>
+          {/* Step Card Component */}
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.number}
+              className="border-2 border-gray-900 p-6 sm:p-8 flex flex-col justify-between h-80"
+              initial={{ opacity: 0, x: index < 3 ? -100 : 100 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+            >
+              <div className="text-4xl sm:text-5xl font-light mb-6 sm:mb-8">
+                {step.number}
+              </div>
+              <div>
+                <h2
+                  className="text-lg sm:text-xl md:text-[20px] font-normal mb-3 sm:mb-4 leading-tight text-gray-900"
+                >
+                  {step.title}
+                </h2>
+                <p
+                  className="text-sm sm:text-base md:text-[16px] font-normal text-gray-700 leading-snug"
+                >
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
 
-          {/* Card 02 */}
-          <motion.div 
-            className="border-2 border-gray-900 p-8 flex flex-col justify-between h-80"
-            initial={{ opacity: 0, x: -100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="text-5xl font-light mb-8">02</div>
-            <div>
-              <h2 className="text-lg font-bold mb-4 leading-tight">Site<br />Assessment</h2>
-              <p className="text-sm text-gray-700 leading-snug">
-                Based on our discussions and site analysis, we develop initial design concepts that bring your vision to life and give you a clear direction.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 03 */}
-          <motion.div 
-            className="border-2 border-gray-900 p-8 flex flex-col justify-between h-80"
-            initial={{ opacity: 0, x: -100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <div className="text-5xl font-light mb-8">03</div>
-            <div>
-              <h2 className="text-lg font-bold mb-4 leading-tight">Design<br />Development</h2>
-              <p className="text-sm text-gray-700 leading-snug">
-                Based on our discussions and site analysis, we develop initial design concepts that bring your vision to life and give you a clear direction.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Row 2 - Card 04 */}
-          <motion.div 
-            className="border-2 border-gray-900 p-8 flex flex-col justify-between h-80"
-            initial={{ opacity: 0, x: 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <div className="text-5xl font-light mb-8">04</div>
-            <div>
-              <h2 className="text-lg font-bold mb-4 leading-tight">Design<br />Refinement</h2>
-              <p className="text-sm text-gray-700 leading-snug">
-                We refine the chosen concept with detailed layouts, materials, and systems, collaborating with consultants.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Card 05 */}
-          <motion.div 
-            className="border-2 border-gray-900 p-8 flex flex-col justify-between h-80"
-            initial={{ opacity: 0, x: 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <div className="text-5xl font-light mb-8">05</div>
-            <div>
-              <h2 className="text-lg font-bold mb-4 leading-tight">Construction<br />Documentation</h2>
-              <p className="text-sm text-gray-700 leading-snug">
-                Our team prepares all the technical drawings and documents needed for permits, budgeting, and construction.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Row 2 - Image */}
-          <motion.div 
+          {/* Bottom Image */}
+          <motion.div
             className="relative h-80 overflow-hidden"
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -127,26 +79,50 @@ const ProjectImplementation = () => {
               <div className="absolute bottom-0 left-1/2 w-1/4 h-2/3 bg-[#3A6B8E] opacity-70" />
             </div>
           </motion.div>
-
-          {/* Card 06 */}
-          <motion.div 
-            className="border-2 border-gray-900 p-8 flex flex-col justify-between h-80"
-            initial={{ opacity: 0, x: 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.7 }}
-          >
-            <div className="text-5xl font-light mb-8">06</div>
-            <div>
-              <h2 className="text-lg font-bold mb-4 leading-tight">Construction<br />Oversight</h2>
-              <p className="text-sm text-gray-700 leading-snug">
-                Throughout the construction phase, we stay involved during construction to ensure the project follows the design and runs smoothly.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </div>
     </motion.div>
   );
 };
+
+// Step Data for cleaner markup
+const steps = [
+  {
+    number: "01",
+    title: "CLIENT\nONBOARDING",
+    description:
+      "Once you contact us, we’ll schedule an initial meeting to understand your needs, goals, and vision for the project.",
+  },
+  {
+    number: "02",
+    title: "SITE\nASSESSMENT",
+    description:
+      "We evaluate your site conditions and requirements to guide early concept development.",
+  },
+  {
+    number: "03",
+    title: "DESIGN\nDEVELOPMENT",
+    description:
+      "Based on discussions and site analysis, we create design concepts that bring your vision to life.",
+  },
+  {
+    number: "04",
+    title: "DESIGN\nREFINEMENT",
+    description:
+      "We refine the chosen concept with detailed layouts, materials, and consultant coordination.",
+  },
+  {
+    number: "05",
+    title: "CONSTRUCTION\nDOCUMENTATION",
+    description:
+      "Our team prepares all technical drawings and documents for permits, budgeting, and execution.",
+  },
+  {
+    number: "06",
+    title: "CONSTRUCTION\nOVERSIGHT",
+    description:
+      "We stay actively involved during construction to ensure smooth progress and design accuracy.",
+  },
+];
 
 export default ProjectImplementation;

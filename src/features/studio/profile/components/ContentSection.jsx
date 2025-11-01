@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
@@ -8,7 +10,7 @@ const ContentSection = ({ children, align = "left" }) => {
   // animation direction based on alignment
   const slideDirection = align === "right" ? 100 : -100;
 
-  // text + container alignment
+  // alignment + text layout
   const alignmentClasses =
     align === "right" ? "text-right ml-auto" : "text-left mr-auto";
 
@@ -20,7 +22,11 @@ const ContentSection = ({ children, align = "left" }) => {
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      {children}
+      <div
+        className="font-normal text-gray-800 leading-relaxed text-lg sm:text-xl md:text-2xl lg:text-[24px]"
+      >
+        {children}
+      </div>
     </motion.div>
   );
 };
