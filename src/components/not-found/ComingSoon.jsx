@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimatedArchitecturalIcon from '../animatedarchiteturalicon/AnimatedArchitecturalIcon';
+import AnimatedArchitecturalIcon from './AnimatedArchitecturalIcon';
 
 const ComingSoon = () => {
   return (

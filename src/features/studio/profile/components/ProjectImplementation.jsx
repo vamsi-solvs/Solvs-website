@@ -32,7 +32,7 @@ const ProjectImplementation = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="absolute inset-0 bg-[#4A7C9E]">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#4A7C9E] to-[#5A8CAE]" />
+              <div className="absolute inset-0 bg-linear-to-br from-[#4A7C9E] to-[#5A8CAE]" />
               <div className="absolute top-0 right-0 w-3/4 h-1/3 bg-white" />
               <div className="absolute top-1/3 right-0 w-2/3 h-1/4 bg-gray-200" />
               <div className="absolute bottom-1/4 left-0 right-0 h-1/4 bg-gray-300" />
@@ -74,7 +74,7 @@ const ProjectImplementation = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-[#7AB5C9] to-[#5A9FB3]">
+            <div className="absolute inset-0 bg-linear-to-b from-[#7AB5C9] to-[#5A9FB3]">
               <div className="absolute bottom-0 left-1/4 w-1/4 h-3/4 bg-[#4A7B9E] opacity-80" />
               <div className="absolute bottom-0 left-1/2 w-1/4 h-2/3 bg-[#3A6B8E] opacity-70" />
             </div>
