@@ -5,10 +5,8 @@ import ComingSoon from '@/components/coming-soon/ComingSoon';
 import ProfileContent from '@/features/studio/profile/ProfileContent';
 import PeopleContent from '@/features/studio/people/PeopleContent';
 import { cn } from "@/lib/utils";
-import HeroSection from '@/features/studio/profile/components/HeroSection';
 
 const filterOptions = [
-  
   "Profile",
   "People",
 ];
@@ -24,8 +22,7 @@ const StudioPage = () => {
   const renderContent = () => {
     switch (activeFilter) {
       case "Profile":
-        return <HeroSection />
-        // return <ProfileContent />;
+        return <ProfileContent />;
       case "People":
         return <PeopleContent />;
 
