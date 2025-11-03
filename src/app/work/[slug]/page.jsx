@@ -18,10 +18,8 @@ export default function ProjectDetailPage() {
   }
 
   const images = [
-    project.imageUrl,
-    "/landingPage/BaliaBusStand.png",
-    "/landingPage/Balehonnur.png",
-    "/landingPage/BagmanneSierra.png",
+    project.images,
+    
   ];
 
   const projectDetailsData = [

@@ -7,26 +7,22 @@ def compress_images(source_folder, name_folder):
     os.makedirs(output_folder, exist_ok=True)
 
     for filename in os.listdir(source_folder):
-        # Only handle images
         if not filename.lower().endswith((".jpg", ".jpeg", ".png")):
             continue
 
-        # Remove leading underscores from the filename for the output
-        cleaned_name = filename.lstrip("_")
-        # Fallback if name becomes empty (very unlikely)
-        if not cleaned_name:
-            cleaned_name = filename.lstrip("_") or filename
-
+        cleaned_name = filename.lstrip("_") or filename
         input_path = os.path.join(source_folder, filename)
         output_name = os.path.splitext(cleaned_name)[0] + ".webp"
         output_path = os.path.join(output_folder, output_name)
 
-        # FFmpeg: resize to 1600px width, compress to quality 40
+        # FFmpeg: high-quality WebP with tuned balance
         subprocess.run([
             "ffmpeg", "-i", input_path,
-            "-vf", "scale=1600:-1",
-            "-q:v", "40",
-            "-y",  # overwrite existing
+            "-vf", "scale=2400:-1:force_original_aspect_ratio=decrease",  # higher resolution
+            "-quality", "90",                # high visual quality
+            "-compression_level", "4",       # moderate compression
+            "-preset", "photo",              # tuned for photos
+            "-y",
             output_path
         ])
 

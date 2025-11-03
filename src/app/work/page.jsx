@@ -12,7 +12,6 @@ const filterOptions = [
   "Public",
   "Commercial",
   "Residential",
-  "Villas",
 ];
 
 export default function WorkPage() {
