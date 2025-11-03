@@ -17,17 +17,26 @@ const projects = [
     category: "Commercial",
     location: "Bengaluru",
     imageUrl:
-      "/landingPage/BagmanneSierra.png",
+        "/bagmane/V2.webp",
     projectSlug: "Bagmanne-Sierra",
   },
   {
     id: "3",
     title: "Balia Bus Stand",
-    category: "Commercial",
+    category: "Public",
     location: "Bengaluru",
     imageUrl:
       "/landingPage/BaliaBusStand.png",
     projectSlug: "Balia-Bus-Stand",
+  },
+  {
+    id: "4",
+    title: "Pine Labs",
+    category: "Commercial",
+    location: "Bengaluru",
+    imageUrl:
+       "/pine_labs_exterior/Scene1_1.webp",
+    projectSlug: "Pine-Labs",
   },
 ];
 

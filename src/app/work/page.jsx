@@ -76,7 +76,7 @@ export default function WorkPage() {
                   {/* Hover details overlay - full image */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute inset-x-0 bottom-0 text-left px-6 py-5">
-                      <h3 className="text-white text-2xl font-light">
+                      <h3 className="text-white text-xl font-light">
                         {project.title}
                       </h3>
                       <p className="text-white/80 text-base font-light mt-1">{project.location}</p>
