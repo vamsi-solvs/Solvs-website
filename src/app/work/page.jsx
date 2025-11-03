@@ -51,7 +51,7 @@ export default function WorkPage() {
 </nav>
 
       {/* Masonry Grid with hover info */}
-      <div className="max-w-7xl mx-auto px-8 pb-20 pt-8">
+      <div className="max-w-8xl mx-auto px-8 pb-20 pt-8">
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
           {filteredProjects.map((project) => (
             <div

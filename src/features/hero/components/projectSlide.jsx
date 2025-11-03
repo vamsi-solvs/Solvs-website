@@ -12,7 +12,7 @@ export function ProjectSlide({ title, category, location, imageUrl, projectSlug 
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${imageUrl})` }}
       >
-        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent dark:from-black/60 dark:via-black/20" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
       </div>
 
       {/* Slide Content */}
@@ -26,15 +26,28 @@ export function ProjectSlide({ title, category, location, imageUrl, projectSlug 
             {category} | {location}
           </p>
 
-          <Link href={`/work/${projectSlug}`}>
+          {/* Buttons Row */}
+          <div className="flex flex-wrap items-center gap-4 mt-6">
+            {/* Project Inquiry Button */}
             <Button
-              variant="ghost"
-              className="text-white text-base md:text-lg font-light tracking-wider px-0 hover:bg-transparent hover:opacity-80 transition-opacity group"
+              variant="default"
+              className="bg-white text-black text-sm md:text-base font-medium px-6 py-3 rounded-md hover:bg-white/90 transition"
+              onClick={() => alert('Open inquiry form or modal here')}
             >
-              VIEW PROJECT
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              PROJECT INQUIRY
             </Button>
-          </Link>
+
+            {/* View Works Button */}
+            <Link href={`/work/${projectSlug}`}>
+              <Button
+                variant="ghost"
+                className="text-white text-sm md:text-base font-medium tracking-wider px-0 hover:bg-transparent hover:opacity-80 transition-opacity group"
+              >
+                VIEW WORKS
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -1,136 +1,129 @@
-"use client";
-
+import React from "react";
 import Image from "next/image";
 import {
   Mail,
   Phone,
   Facebook,
   Instagram,
-  X,
   Youtube,
   Linkedin,
 } from "lucide-react";
-
+import Link from "next/link";
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors px-6 md:px-12 py-24 grid md:grid-cols-2 gap-16">
-      {/* Left Section */}
-      <div className="space-y-8">
-        <div>
-          <h1 className="text-5xl md:text-7xl font-semibold mb-6">CONTACT US</h1>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-md">
-            For any enquiries, or just to say hello, get in touch and contact us.
-          </p>
-        </div>
-
-        <div className="flex flex-col md:flex-row md:gap-16 gap-10 mt-10">
-          {/* New Projects */}
+    <div className="min-h-screen bg-white">
+      {/* Main Content */}
+      <main className="px-6 py-8 md:px-12 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+          {/* Left Column */}
           <div>
-            <h3 className="text-gray-500 mb-3 text-sm tracking-wide uppercase">
-              New Projects
-            </h3>
-            <div className="space-y-1 text-base">
-              <p>Inspira</p>
-              <p>Narayana One Health</p>
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 md:mb-12 leading-tight">
+              CONTACT US
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+              For any enquiries, or just to say hello, get in touch and contact
+              us.
+            </p>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-8 md:space-y-12">
+            {/* Contact Info Section */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+              {/* General Inquiries */}
+              <div>
+                <h3 className="text-xl font-semibold mb-6">General Inquires</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5" />
+                    <span className="text-lg">ofa@gmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5" />
+                    <span className="text-lg">098455 37772</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div>
+                <h3 className="text-xl font-semibold mb-6">Address</h3>
+                <p className="text-lg leading-relaxed">
+                  934, 3rd Cross Rd, HRBR Layout
+                  <br />
+                  1st Block, HRBR Layout, Kalyan
+                  <br />
+                  Nagar, Bengaluru, Karnataka
+                  <br />
+                  560043
+                </p>
+              </div>
+            </div>
+
+            {/* Social Media Section */}
+            <div>
+              <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
+              <div className="flex gap-6">
+                <a href="#" className="hover:opacity-70">
+                  <Facebook className="w-6 h-6" />
+                </a>
+
+                <a href="#" className="hover:opacity-70">
+                  <Link
+                    href="https://www.instagram.com/officeofarchitecture/" // ← your real Instagram URL
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="hover:text-black transition-colors"
+                  >
+                    <Instagram className="w-6 h-6" />
+                  </Link>
+                </a>
+                <a href="#" className="hover:opacity-70">
+                  <svg
+                    className="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+                <a href="#" className="hover:opacity-70">
+                  <Youtube className="w-6 h-6" />
+                </a>
+                <a href="#" className="hover:opacity-70">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+              </div>
+            </div>
+
+            {/* Building Image */}
+            <div className="mt-8 relative w-full h-64">
+              <Image
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"
+                alt="Modern architecture building"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
-
-          {/* General Inquiries */}
-          <div>
-            <h3 className="text-gray-500 mb-3 text-sm tracking-wide uppercase">
-              General Inquiries
-            </h3>
-            <div className="space-y-2">
-              <a
-                href="mailto:ofa@gmail.com"
-                className="flex items-center gap-3 group"
-              >
-                <Mail className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors dark:text-gray-300 dark:group-hover:text-white" />
-                <span className="group-hover:underline">ofa@gmail.com</span>
-              </a>
-              <a
-                href="tel:09845537772"
-                className="flex items-center gap-3 group"
-              >
-                <Phone className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors dark:text-gray-300 dark:group-hover:text-white" />
-                <span className="group-hover:underline">098455 37772</span>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
 
-      {/* Right Section */}
-      <div className="space-y-10">
-        {/* Address */}
-        <div>
-          <h3 className="text-gray-500 mb-3 text-sm tracking-wide uppercase">
-            Address
-          </h3>
-          <p className="leading-relaxed text-base">
-            934, 3rd Cross Rd, HRBR Layout
-            <br />
-            1st Block, HRBR Layout, Kalyan Nagar,
-            <br />
-            Bengaluru, Karnataka 560043
+        {/* Footer */}
+        <div className="mt-16 md:mt-24 text-center text-gray-600">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            Designed and developed by{" "}
+            <Link
+              href="https://www.solvs.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-black dark:hover:text-white transition-colors"
+            >
+              Solvs.co
+            </Link>
           </p>
         </div>
-
-        {/* Follow Us */}
-        <div>
-          <h3 className="text-gray-500 mb-3 text-sm tracking-wide uppercase">
-            Follow Us
-          </h3>
-          <div className="flex items-center space-x-4">
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="text-gray-600 hover:text-black transition-colors dark:text-gray-300 dark:hover:text-white"
-            >
-              <Facebook className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="text-gray-600 hover:text-black transition-colors dark:text-gray-300 dark:hover:text-white"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              aria-label="X"
-              className="text-gray-600 hover:text-black transition-colors dark:text-gray-300 dark:hover:text-white"
-            >
-              <X className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              aria-label="YouTube"
-              className="text-gray-600 hover:text-black transition-colors dark:text-gray-300 dark:hover:text-white"
-            >
-              <Youtube className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="text-gray-600 hover:text-black transition-colors dark:text-gray-300 dark:hover:text-white"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
-        {/* Image */}
-        <div className="mt-8">
-          <Image
-            src="https://images.pexels.com/photos/210552/pexels-photo-210552.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Architectural Building"
-            width={800}
-            height={500}
-            className="rounded-lg shadow-lg object-cover w-full h-auto"
-          />
-        </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }

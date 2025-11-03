@@ -37,7 +37,7 @@ export function Footer() {
             <Facebook className="w-5 h-5" />
           </Link>
           <Link
-            href="#"
+            href="https://www.instagram.com/officeofarchitecture/"
             aria-label="Instagram"
             className="hover:opacity-80 transition-opacity"
           >

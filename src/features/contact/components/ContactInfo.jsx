@@ -55,7 +55,7 @@ export function ContactInfo() {
             <Facebook className="w-5 h-5" />
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/officeofarchitecture/"
             aria-label="Instagram"
             className="text-gray-600 hover:text-black transition-colors"
           >
