@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { InquiryFormDialog } from "./InquiryFormDialog";
 
 export function ProjectSlide({ title, category, location, imageUrl, projectSlug }) {
   return (
@@ -26,18 +27,10 @@ export function ProjectSlide({ title, category, location, imageUrl, projectSlug 
             {category} | {location}
           </p>
 
-          {/* Buttons Row */}
+          {/* Buttons */}
           <div className="flex flex-wrap items-center gap-4 mt-6">
-            {/* Project Inquiry Button */}
-            <Button
-              variant="default"
-              className="bg-white text-black text-sm md:text-base font-medium px-6 py-3 rounded-md hover:bg-white/90 transition"
-              onClick={() => alert('Open inquiry form or modal here')}
-            >
-              PROJECT INQUIRY
-            </Button>
+            <InquiryFormDialog />
 
-            {/* View Works Button */}
             <Link href={`/work/${projectSlug}`}>
               <Button
                 variant="ghost"

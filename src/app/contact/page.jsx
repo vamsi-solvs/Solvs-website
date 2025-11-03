@@ -61,25 +61,37 @@ export default function ContactPage() {
             </div>
 
             {/* Social Media Section */}
+            {/* Social Media Section */}
             <div>
               <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
               <div className="flex gap-6">
-                <a href="#" className="hover:opacity-70">
+                <Link
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="hover:opacity-70"
+                >
                   <Facebook className="w-6 h-6" />
-                </a>
+                </Link>
 
-                <a href="#" className="hover:opacity-70">
-                  <Link
-                    href="https://www.instagram.com/officeofarchitecture/" // ← your real Instagram URL
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="hover:text-black transition-colors"
-                  >
-                    <Instagram className="w-6 h-6" />
-                  </Link>
-                </a>
-                <a href="#" className="hover:opacity-70">
+                <Link
+                  href="https://www.instagram.com/officeofarchitecture/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="hover:opacity-70"
+                >
+                  <Instagram className="w-6 h-6" />
+                </Link>
+
+                <Link
+                  href="https://x.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X"
+                  className="hover:opacity-70"
+                >
                   <svg
                     className="w-6 h-6"
                     viewBox="0 0 24 24"
@@ -87,13 +99,27 @@ export default function ContactPage() {
                   >
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
-                </a>
-                <a href="#" className="hover:opacity-70">
+                </Link>
+
+                <Link
+                  href="https://youtube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="hover:opacity-70"
+                >
                   <Youtube className="w-6 h-6" />
-                </a>
-                <a href="#" className="hover:opacity-70">
+                </Link>
+
+                <Link
+                  href="https://linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:opacity-70"
+                >
                   <Linkedin className="w-6 h-6" />
-                </a>
+                </Link>
               </div>
             </div>
 
