@@ -73,12 +73,14 @@ export default function WorkPage() {
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 
-                  {/* Hover details bar */}
-                  <div className="absolute inset-x-0 bottom-0 bg-white/90 text-center py-4 opacity-0 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <h3 className="text-black text-lg font-semibold">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm">{project.location}</p>
+                  {/* Hover details overlay - full image */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-x-0 bottom-0 text-left px-6 py-5">
+                      <h3 className="text-white text-2xl font-light">
+                        {project.title}
+                      </h3>
+                      <p className="text-white/80 text-base font-light mt-1">{project.location}</p>
+                    </div>
                   </div>
                 </Link>
               </div>
