@@ -325,4 +325,45 @@ export const projects = [
     status: "Completed",
     architects: "Henry Green, Ivy Blue",
   },
+  {
+    id: "11",
+    imageUrl:
+         "/one_health/7.webp",
+    title: "One Health",
+    location: "Bengaluru",
+    category: "Commercial",
+    slug: generateSlug("Pine Labs"),
+    description:
+      "A modern residential complex with thoughtfully designed apartments, offering a perfect blend of comfort and convenience.",
+    details:
+      "Gymnasium, children's play area, landscaped gardens, and proximity to IT parks. Ideal for urban families.",
+    images: 
+[
+  "/one_health/15.webp",
+  "/one_health/5.webp",
+  "/one_health/19.webp",
+  "/one_health/9.webp",
+  "/one_health/8.webp",
+  "/one_health/18.webp",
+  "/one_health/4.webp",
+  "/one_health/14.webp",
+  "/one_health/13.webp",
+  "/one_health/3.webp",
+  "/one_health/2.webp",
+  "/one_health/12.webp",
+  "/one_health/1.webp",
+  "/one_health/11.webp",
+  "/one_health/10.webp",
+  "/one_health/7.webp",
+  "/one_health/17.webp",
+  "/one_health/20.webp",
+  "/one_health/16.webp",
+  "/one_health/6.webp",
+],
+    year: "2023",
+    area: "6000 Sq.Ft",
+    status: "Completed",
+    architects: "Henry Green, Ivy Blue",
+  },
+  
 ];

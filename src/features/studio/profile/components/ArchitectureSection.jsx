@@ -22,7 +22,7 @@ const ArchitectureSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <Image
-              src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920"
+              src="/OFA_office/WhatsApp Image 2025-11-05 at 10.44.42 (1).jpeg"
               alt="Modern architectural skyscrapers viewed from below"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
@@ -59,7 +59,7 @@ const ArchitectureSection = () => {
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+              src="/OFA_office/WhatsApp Image 2025-11-05 at 10.44.42 (2).jpeg"
               alt="Modern curved building with coral pink facade"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
@@ -73,7 +73,7 @@ const ArchitectureSection = () => {
             transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29"
+              src="/OFA_office/WhatsApp Image 2025-11-05 at 10.44.42.jpeg"
               alt="Angular modern glass building with geometric patterns"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"

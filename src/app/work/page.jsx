@@ -5,6 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { projects } from "@/utils/projects";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const filterOptions = [
   "All",
@@ -48,7 +49,7 @@ export default function WorkPage() {
         </div>
       </nav>
 
-      {/* Masonry Grid with hover info */}
+      {/* Masonry Grid */}
       <div className="max-w-8xl mx-auto px-8 pb-20 pt-8">
         {filteredProjects.length === 0 ? (
           <div className="flex items-center justify-center h-[60vh]">
@@ -57,35 +58,41 @@ export default function WorkPage() {
             </p>
           </div>
         ) : (
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group relative overflow-hidden break-inside-avoid cursor-pointer"
-              >
-                <Link href={`/work/${project.slug}`}>
-                  {/* Image */}
-                  <Image
-                    src={project.imageUrl}
-                    alt={project.title}
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+          <ResponsiveMasonry
+    columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
+  >
+    <Masonry gutter="24px" className="w-full!">
+              {filteredProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className="group relative overflow-hidden cursor-pointer"
+                >
+                  <Link href={`/work/${project.slug}`}>
+                    {/* Image */}
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
 
-                  {/* Hover details overlay - full image */}
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute inset-x-0 bottom-0 text-left px-6 py-5">
-                      <h3 className="text-white text-xl font-light">
-                        {project.title}
-                      </h3>
-                      <p className="text-white/80 text-base font-light mt-1">{project.location}</p>
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute inset-x-0 bottom-0 text-left px-6 py-5">
+                        <h3 className="text-white text-xl font-light">
+                          {project.title}
+                        </h3>
+                        <p className="text-white/80 text-base font-light mt-1">
+                          {project.location}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+                  </Link>
+                </div>
+              ))}
+            </Masonry>
+          </ResponsiveMasonry>
         )}
       </div>
     </div>
