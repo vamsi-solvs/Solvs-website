@@ -13,21 +13,21 @@ const projects = [
   },
   {
     id: "2",
-    title: "Bagmanne Sierra",
+    title: "Sierra Tech Park",
     category: "Commercial",
     location: "Bengaluru",
     imageUrl:
         "/bagmane/V2.webp",
-    projectSlug: "Bagmanne-Sierra",
+    projectSlug: "sierra-tech-park",
   },
   {
     id: "3",
-    title: "Balia Bus Stand",
+    title: "Ballia Bus Stand",
     category: "Public",
     location: "Bengaluru",
     imageUrl:
       "/landingPage/BaliaBusStand.png",
-    projectSlug: "Balia-Bus-Stand",
+    projectSlug: "ballia-bus-stand",
   },
   {
     id: "4",
@@ -36,7 +36,7 @@ const projects = [
     location: "Bengaluru",
     imageUrl:
        "/pine_labs_exterior/Scene1_1.webp",
-    projectSlug: "Pine-Labs",
+    projectSlug: "pine-labs",
   },
 ];
 

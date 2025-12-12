@@ -9,23 +9,22 @@ import NotFound from "@/components/not-found/NotFound";
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();
-  const project = projects.find((p) => p.slug === slug.toLowerCase());
+  const normalizedSlug = slug?.toLowerCase();
+  const currentIndex = projects.findIndex((p) => p.slug === normalizedSlug);
+  const project = projects[currentIndex];
 
-  if (!project) {
-    return (
-     <NotFound />
-    );
-  }
+  if (!project) return <NotFound />;
 
-  const images = [
-    project.images,
-    
-  ];
+  // circular next/prev
+  const prevIndex = (currentIndex - 1 + projects.length) % projects.length;
+  const nextIndex = (currentIndex + 1) % projects.length;
+
+  const prevProject = projects[prevIndex];
+  const nextProject = projects[nextIndex];
 
   const projectDetailsData = [
     { label: "Location", value: project.location },
     { label: "Category", value: project.category },
-    { label: "Year", value: project.year },
     { label: "Area", value: project.area },
     { label: "Status", value: project.status },
     { label: "Architects", value: project.architects },
@@ -33,49 +32,67 @@ export default function ProjectDetailPage() {
 
   return (
     <div className="min-h-screen bg-background">
-  {/* Hero Carousel */}
-  <ProjectCarousel images={images} />
+      {/* Hero Carousel */}
+      <ProjectCarousel images={project.images} />
 
-  {/* Main Content */}
-  <div className="py-12 lg:px-16">
-    <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-      {/* Left Column - Project Description (2/3 width) */}
-      <div className="lg:col-span-2 px-6 sm:px-8 lg:pl-0 lg:pr-12">
-        {/* Title */}
-        <h1 className="mb-8 text-[32px] md:text-[36px] lg:text-[40px] font-semibold uppercase tracking-tight text-black">
-          {project.title}
-        </h1>
+      {/* Main Content */}
+      <div className="py-16 lg:px-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
+          {/* Left Column */}
+          <div className="lg:col-span-2 px-6 sm:px-8 lg:pl-0 lg:pr-12">
+            <h1 className="mb-8 text-[18px] md:text-[20px] lg:text-[24px] font-medium uppercase tracking-tight text-gray-900">
+              {project.title}
+            </h1>
 
-        {/* Description */}
-        <div className="space-y-6 text-[18px] md:text-[20px] lg:text-[24px] font-normal leading-relaxed text-foreground">
-          <p>
-            {project.description ||
-              "Lorem ipsum dolor sit amet consectetur. Mauris ultrices consectetur eu vitae integer egestas fringilla posuere sollicitudin. In lorem quis faucibus feugiat. Morbi senectus elit at id. Hendrerit nec ut imperdiet blandit malesuada pellentesque. Vitae sed tortor velit egestas mauris consequat malesuada. Ipsum a tellus volutpat mi fringilla vitae suspendisse. Lectus nisi dictumst sagittis vitae. Aenean sit dolor porta purus ultrices ridiculus. Felis adipiscing quam ut ante dolor proin vitae. Amet aenean aliquet magnis facilisi. Sit arcu adipiscing enim venenatis in eget. Laoreet aliquam et diam sed semper vitae."}
-          </p>
+            <div className="space-y-6 text-[12px] md:text-[14px] lg:text-[16px] font-light leading-relaxed text-foreground">
+              <p>{project.description}</p>
+              <p>{project.details}</p>
+            </div>
+          </div>
 
-          <p>
-            {project.details ||
-              "Lectus laoreet mi eu purus nunc amet. Duis lectus fermentum nunc suspendisse id tristique non diam.Posuere amet luctus urna orci nunc massa urna amet. Aliquam dui et turpis pulvinar. Sed sed gravida tellus mi eget. Risus senectus aliquet scelerisque urna sed at id tellus. Dis amet ultrices etiam velit odio imperdiet."}
-          </p>
-
-          <p>
-            Lectus laoreet mi eu purus nunc amet. Duis lectus fermentum nunc
-            suspendisse id tristique non diam.Posuere amet luctus urna orci nunc
-            massa urna amet. Aliquam dui et turpis pulvinar. Sed sed gravida
-            tellus mi eget. Risus senectus aliquet scelerisque urna sed at id
-            tellus. Dis amet ultrices etiam velit odio imperdiet.
-          </p>
+          {/* Right Column */}
+          <div className="lg:col-span-1 px-6 sm:px-8 lg:px-0">
+            <div className="text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-relaxed">
+              <ProjectDetails details={projectDetailsData} />
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Right Column - Project Details (1/3 width) */}
-      <div className="lg:col-span-1 px-6 sm:px-8 lg:px-0">
-        <div className="text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-relaxed">
-          <ProjectDetails details={projectDetailsData} />
+      {/* BOTTOM NAVIGATION */}
+      <div className="w-full mt-4 pt-4 px-6 lg:px-16">
+        {/* Responsive: keep same visual on desktop; stack & center on mobile */}
+        <div className="flex flex-col items-center gap-3 md:flex-row md:justify-between md:items-center">
+          
+          {/* Back to Work - centered on mobile, left on md+ */}
+          <Link
+            href="/work"
+            aria-label="Back to work"
+            className="inline-flex items-center gap-2 text-[12px] md:text-[14px] lg:text-[16px] font-medium hover:opacity-75 transition px-4 py-3"
+          >
+            <span>← Back to Work</span>
+          </Link>
+
+          {/* Prev / Next - centered on mobile below Back, right on md+ */}
+          <div className="flex items-center gap-6 text-[12px] md:text-[14px] lg:text-[16px] font-medium">
+            <Link
+              href={`/work/${prevProject.slug}`}
+              aria-label={`Previous project: ${prevProject.title}`}
+              className="inline-flex items-center gap-2 hover:opacity-75 transition px-4 py-3"
+            >
+              ← Prev
+            </Link>
+
+            <Link
+              href={`/work/${nextProject.slug}`}
+              aria-label={`Next project: ${nextProject.title}`}
+              className="inline-flex items-center gap-2 hover:opacity-75 transition px-4 py-3"
+            >
+              Next →
+            </Link>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
   );
 }

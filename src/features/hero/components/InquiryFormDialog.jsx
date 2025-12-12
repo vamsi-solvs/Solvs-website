@@ -27,7 +27,7 @@ export function InquiryFormDialog({ buttonLabel = "PROJECT INQUIRY" }) {
       <DialogTrigger asChild>
         <Button
           variant="default"
-          className="bg-white text-black text-sm md:text-base font-medium px-6 py-3 rounded-md hover:bg-white/90 transition"
+          className="bg-white text-gray-900 text-sm md:text-base font-medium px-6 py-3 rounded-md hover:bg-white/90 transition"
         >
           {buttonLabel}
         </Button>

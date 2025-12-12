@@ -26,11 +26,11 @@ export function ContactInfo() {
 
       <InfoSection title="General Inquiries">
         <a href="mailto:ofa@gmail.com" className="flex items-center gap-3 group">
-          <Mail className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+          <Mail className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors" />
           <span className="group-hover:underline">ofa@gmail.com</span>
         </a>
         <a href="tel:09845537772" className="flex items-center gap-3 group">
-          <Phone className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+          <Phone className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors" />
           <span className="group-hover:underline">098455 37772</span>
         </a>
       </InfoSection>
@@ -50,35 +50,35 @@ export function ContactInfo() {
           <a
             href="#"
             aria-label="Facebook"
-            className="text-gray-600 hover:text-black transition-colors"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
           >
             <Facebook className="w-5 h-5" />
           </a>
           <a
             href="https://www.instagram.com/officeofarchitecture/"
             aria-label="Instagram"
-            className="text-gray-600 hover:text-black transition-colors"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
           >
             <Instagram className="w-5 h-5" />
           </a>
           <a
             href="#"
             aria-label="X"
-            className="text-gray-600 hover:text-black transition-colors"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
           >
             <X className="w-5 h-5" />
           </a>
           <a
             href="#"
             aria-label="YouTube"
-            className="text-gray-600 hover:text-black transition-colors"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
           >
             <Youtube className="w-5 h-5" />
           </a>
           <a
             href="#"
             aria-label="LinkedIn"
-            className="text-gray-600 hover:text-black transition-colors"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
           >
             <Linkedin className="w-5 h-5" />
           </a>

@@ -37,10 +37,10 @@ const StudioPage = () => {
               key={option}
               onClick={() => handleFilterChange(option)}
               className={cn(
-                "font-medium text-[18px] sm:text-[19px] md:text-[20px] transition-colors duration-150",
+                "font-normal text-[18px] sm:text-[19px] md:text-[20px] transition-colors duration-150",
                 activeFilter === option
-                  ? "text-black"
-                  : "text-gray-500 hover:text-black"
+                  ? "text-gray-900"
+                  : "text-gray-500 hover:text-gray-900"
               )}
             >
               {option}

@@ -4,7 +4,7 @@ const ProjectDetails = ({ details }) => {
   return (
     <div className="space-y-8">
       {/* Section Title */}
-      <h2 className="text-[24px] md:text-[28px] lg:text-[32px] font-medium uppercase tracking-tight text-black">
+      <h2 className="text-[18px] md:text-[20px] lg:text-[24px] font-medium uppercase tracking-tight text-gray-900">
         PROJECT DETAILS
       </h2>
 
@@ -13,11 +13,11 @@ const ProjectDetails = ({ details }) => {
         {details.map((detail, index) => (
           <div key={index}>
             {/* Label */}
-            <h3 className="text-[18px] md:text-[20px] font-medium text-[#484E55]">
+            <h3 className="text-[12px] md:text-[14px] font-normal text-gray-900">
               {detail.label}
             </h3>
             {/* Value */}
-            <p className="text-[18px] md:text-[20px] font-medium text-black">
+            <p className="text-[12px] md:text-[14px] font-light text-[#484E55]">
               {detail.value}
             </p>
           </div>

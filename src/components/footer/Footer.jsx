@@ -13,7 +13,7 @@ import { Separator } from "@/components/ui/separator";
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black text-black dark:text-white mt-20">
+    <footer className="w-full border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black text-gray-900 dark:text-white mt-20">
       <div className="flex flex-col items-center justify-center py-10 px-6 text-center space-y-6">
         {/* Copyright + Policy */}
         <p className="text-sm md:text-base tracking-wide">
@@ -78,7 +78,7 @@ export function Footer() {
             href="https://www.solvs.co"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-black dark:hover:text-white transition-colors"
+            className="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
             Solvs
           </Link>

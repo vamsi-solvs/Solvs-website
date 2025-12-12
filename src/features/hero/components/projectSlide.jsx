@@ -19,9 +19,9 @@ export function ProjectSlide({ title, category, location, imageUrl, projectSlug 
       {/* Slide Content */}
       <div className="relative h-full flex flex-col justify-end px-6 md:px-12 pb-16 md:pb-24">
         <div className="max-w-2xl space-y-4 md:space-y-6">
-          <h2 className="text-white text-5xl md:text-7xl font-light tracking-wide">
+          <h4 className="text-white text-3xl md:text-4xl font-light tracking-wide">
             {title}
-          </h2>
+          </h4>
 
           <p className="text-white/90 text-xl md:text-2xl font-light">
             {category} | {location}
@@ -34,12 +34,14 @@ export function ProjectSlide({ title, category, location, imageUrl, projectSlug 
             <Link href={`/work/${projectSlug}`}>
               <Button
                 variant="ghost"
-                className="text-white text-sm md:text-base font-medium tracking-wider px-0 hover:bg-transparent hover:opacity-80 transition-opacity group"
+                className="text-white text-sm md:text-base font-medium tracking-wider px-0
+                           hover:underline underline-offset-4
+                           hover:!bg-transparent hover:!opacity-100 hover:!text-white"
               >
                 VIEW WORK
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-            </Link>
+            </Link> 
           </div>
         </div>
       </div>

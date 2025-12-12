@@ -1,32 +1,86 @@
 export const peopleData = [
+  // Principal Architects
   {
-    name: "Olivia Chen",
-    designation: "Principal Architect",
-    imageUrl:
-      "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=600&q=80",
+    name: "ASHISH JAUHRI",
+    designation: "PRINCIPAL ARCHITECT",
+    imageUrl: "/photo/1 - ASHISH JAUHRI - PRINCIPAL ARCHITECT.jpg",
   },
   {
-    name: "Benjamin Carter",
-    designation: "Lead Designer",
-    imageUrl:
-      "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=600&q=80",
+    name: "RADHA KRISNA PAMADI",
+    designation: "PRINCIPAL ARCHITECT",
+    imageUrl: "/photo/2 - RADHA KRISNA PAMADI - PRINCIPAL ARCHITECT.jpg",
+  },
+
+  // Senior Designers
+  {
+    name: "RAJVI JHAVERI",
+    designation: "SENIOR INTERIOR DESIGNER",
+    imageUrl: "/photo/3 - RAJVI JHAVERI - SENIOR INTERIOR DESIGNER.jpg",
   },
   {
-    name: "Sophia Rodriguez",
-    designation: "Project Manager",
-    imageUrl:
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80",
+    name: "SHAJIL VP",
+    designation: "SENIOR DESIGNER",
+    imageUrl: "/photo/6 - SHAJIL VP - SENIOR DESIGNER.jpg",
   },
   {
-    name: "Liam Goldberg",
-    designation: "Architectural Technologist",
-    imageUrl:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
+    name: "DHANLAXMI NAIR",
+    designation: "SENIOR DESIGNER",
+    imageUrl: "/photo/7 - DHANLAXMI NAIR - SENIOR DESIGNER.jpg",
+  },
+
+  // Project Architects / Project Managers / Others
+  {
+    name: "AMRITA ASHOK",
+    designation: "PROJECT ARCHITECT",
+    imageUrl: "/photo/4 - AMRITA ASHOK - PROJECT ARCHITECT.jpg",
   },
   {
-    name: "Ava Nguyen",
-    designation: "Junior Designer",
-    imageUrl:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80",
+    name: "DEEPAK GOWDA",
+    designation: "PROJECT ARCHITECT",
+    imageUrl: "/photo/5 - DEEPAK GOWDA - PROJECT ARCHITECT.jpg",
+  },
+  {
+    name: "FREDI BALAN",
+    designation: "PROJECT MANAGER",
+    imageUrl: "/photo/10 - FREDI BALAN - PROJECT MANAGER.jpeg",
+  },
+  {
+    name: "SHARATH CHANDRA",
+    designation: "PROJECT MANAGER",
+    imageUrl: "/photo/11 - SHARATH CHANDRA - PROJECT MANAGER.jpg",
+  },
+  {
+    name: "T SHIVANATHAN",
+    designation: "QUANTITY SURVEYOR",
+    imageUrl: "/photo/12 - T SHIVANATHAN - QUANTITY SURVEYOR.jpg",
+  },
+  {
+    name: "NAKSHATRA PAREKH",
+    designation: "3D VISUALISER",
+    imageUrl: "/photo/13 - NAKSHATRA PAREKH - 3D VISUALISER.jpg",
+  },
+  {
+    name: "KHUSHI GUPTA",
+    designation: "INTERIOR DESIGNER",
+    imageUrl: "/photo/14 - KHUSHI GUPTA - INTERIOR DESIGNER.jpg",
+  },
+
+  // Junior roles
+  {
+    name: "SAPNA SUTHAR",
+    designation: "JUNIOR ARCHITECT",
+    imageUrl: "/photo/8 - SAPNA SUTHAR - JUNIOR ARCHITECT.jpg",
+  },
+  {
+    name: "RAMJITH K JAYAN",
+    designation: "JUNIOR ARCHITECT",
+    imageUrl: "/photo/9 - RAMJITH K JAYAN - JUNIOR ARCHITECT.jpg",
+  },
+
+  // HR
+  {
+    name: "MANJUNATH HANUMANTH",
+    designation: "HUMAN RESOURCE MANAGER",
+    imageUrl: "/photo/15 - MANJUNATH HANUMANTH - HUMAN RESOURCE MANAGER.jpeg",
   },
 ];

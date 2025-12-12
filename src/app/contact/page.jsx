@@ -13,11 +13,11 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Main Content */}
-      <main className="px-6 py-8 md:px-12 md:py-16">
+      <main className="px-6 py-6 md:px-12 md:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
           {/* Left Column */}
           <div>
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 md:mb-12 leading-tight">
+            <h2 className="text-5xl md:text-7xl font-medium mb-8 md:mb-12 leading-tight">
               CONTACT US
             </h2>
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
@@ -136,14 +136,14 @@ export default function ContactPage() {
         </div>
 
         {/* Footer */}
-        <div className="mt-16 md:mt-24 text-center text-gray-600">
+        <div className="mt-16 md:mt-12 text-center text-gray-600">
           <p className="text-xs text-gray-500 dark:text-gray-400">
             Designed and developed by{" "}
             <Link
               href="https://www.solvs.co"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-black dark:hover:text-white transition-colors"
+              className="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               Solvs.co
             </Link>

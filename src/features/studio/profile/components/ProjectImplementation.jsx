@@ -18,7 +18,7 @@ const ProjectImplementation = () => {
       <div className="w-full">
         {/* Section Title */}
         <h1
-          className="text-2xl sm:text-3xl md:text-[32px] font-semibold mb-12 text-gray-900 leading-tight"
+          className="text-2xl sm:text-3xl md:text-[32px] font-medium mb-12 text-gray-900 leading-tight"
         >
           Project Implementation at OFA
         </h1>
