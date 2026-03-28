@@ -52,15 +52,7 @@ const ProjectCarousel = ({ images = [] }) => {
                   
                   {/* Left clickable area */}
                   <button
-                    onClick={() => {
-                      // Add gradient fade effect before scrolling
-                      const el = document.querySelector(".transition-opacity");
-                      if (el) el.classList.add("opacity-0");
-                      setTimeout(() => {
-                        scrollPrev();
-                        if (el) el.classList.remove("opacity-0");
-                      }, 300);
-                    }}
+                    onClick={scrollPrev}
                     className="absolute left-0 top-0 h-full w-1/3 cursor-w-resize z-10 transition-all duration-200"
                     style={{
                       background: 'radial-gradient(ellipse at left, rgba(0,0,0,0) 0%, transparent 100%)',
@@ -73,14 +65,7 @@ const ProjectCarousel = ({ images = [] }) => {
 
                   {/* Right clickable area */}
                   <button
-                    onClick={() => {
-                      const el = document.querySelector(".transition-opacity");
-                      if (el) el.classList.add("opacity-0");
-                      setTimeout(() => {
-                        scrollNext();
-                        if (el) el.classList.remove("opacity-0");
-                      }, 300);
-                    }}
+                    onClick={scrollNext}
                     className="absolute right-0 top-0 h-full w-1/3 cursor-e-resize z-10 transition-all duration-200"
                     style={{
                       background: 'radial-gradient(ellipse at right, rgba(0,0,0,0) 0%, transparent 100%)',

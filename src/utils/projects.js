@@ -36,7 +36,7 @@ export const projects = [
   {
     id: "2",
     imageUrl:
-        "/bagmane/V2.webp",
+      "/bagmane/V2.webp",
     title: "Sierra Tech Park",
     location: "Bengaluru",
     category: "Commercial",
@@ -93,7 +93,7 @@ export const projects = [
   {
     id: "4",
     imageUrl:
-       "/sushanth/MMH5555.webp",
+      "/sushanth/MMH5555.webp",
     title: "Sushanth AS",
     location: "Bangalore",
     category: "Residential",
@@ -160,7 +160,7 @@ export const projects = [
   {
     id: "6",
     imageUrl:
-        "/jay_desai/ak-3 copy.webp",
+      "/jay_desai/ak-3 copy.webp",
     title: "Jay Desai",
     location: "Bengaluru",
     category: "Residential",
@@ -235,7 +235,7 @@ export const projects = [
       "This commercial complex, designed as a Basement + Ground + 3 storey structure, combines efficient engineering with a clean, contemporary architectural expression. The basement was constructed using secant piling to ensure stability in the tight urban context, while the superstructure employs post-tensioned slabs and beams, enabling large, uninterrupted interior floor plates with minimal columns ideal for flexible commercial planning.",
     details:
       "The façade is defined by four bold ACP portals that frame the building and give it a strong rhythmic identity along the streetscape. Within these portals, expansive glazing and neatly aligned spandrel panels conceal structural beams, creating a seamless, vertical visual flow. The result is a modern, high performance commercial building that balances structural clarity, spatial efficiency, and an elegant, minimal aesthetic suited to a premium urban address.",
-    images:[
+    images: [
       "/sri_durga/Final 2.webp",
       "/sri_durga/Final View 2.webp",
       "/sri_durga/Final View 1.webp",
@@ -248,7 +248,7 @@ export const projects = [
   {
     id: "9",
     imageUrl:
-        "/pine_labs/2.RECEPTION.webp",
+      "/pine_labs/2.RECEPTION.webp",
     title: "Pine Labs Interior",
     location: "Bengaluru",
     category: "Renovation",
@@ -258,7 +258,7 @@ export const projects = [
     details:
       "The level is divided into two zones: the office space and the innovation centre. The office opens with a spacious reception featuring a baffled wall inspired by the new façade and a prominent static LED display visible from the main road. Work areas include open workstations, 4- and 6-seater cabins, and private 1- and 2-seater pods for confidential discussions. The innovation centre serves as an immersive showcase, equipped with a curved display screen, a dedicated “swag store,” and a POS device display area. It culminates in a grand executive boardroom with a 17-seater marble table, side seating, and elegant chandeliers. Supporting spaces include a dry pantry with high-top seating, a resting room for employees, and a curved wooden partition that separates the two zones.",
     images: [
-      "/pine_labs/2.RECEPTION.webp", 
+      "/pine_labs/2.RECEPTION.webp",
       "/pine_labs/19.BREAKOUT.webp",
       "/pine_labs/14.PB.webp",
       "/pine_labs/1.RECEPTION.webp",
@@ -288,7 +288,7 @@ export const projects = [
   {
     id: "10",
     imageUrl:
-       "/pine_labs_exterior/Scene1_1.webp",
+      "/pine_labs_exterior/Scene1_1.webp",
     title: "Pine Labs",
     location: "Bengaluru",
     category: "Renovation",
@@ -315,7 +315,7 @@ export const projects = [
   {
     id: "11",
     imageUrl:
-         "/one_health/7.webp",
+      "/one_health/7.webp",
     title: "One Health",
     location: "Bengaluru",
     category: "Commercial",
@@ -406,12 +406,12 @@ export const projects = [
     ],
     area: "12000 Sq.Ft",
     status: "Completed",
-    architects: "Charlie Brown, Lucy Van Pelt",
+    architects: "Office Of Architecture, Lucy Van Pelt",
   },
   {
     id: "14",
     imageUrl:
-       "/Maruthi Ceramics/_ARJ7902.jpg",
+      "/Maruthi Ceramics/_ARJ7902.jpg",
     title: "Maruthi Ceramics",
     location: "Bangalore",
     category: "Commercial",
@@ -437,7 +437,132 @@ export const projects = [
     ],
     area: "12000 Sq.Ft",
     status: "Completed",
-    architects: "Charlie Brown, Lucy Van Pelt",
+    architects: "Office Of Architecture, Lucy Van Pelt",
   },
-  
+  {
+    id: "15",
+    imageUrl: "/air_harinagar_patna/Scene 57.webp",
+    title: "AIR Harinagar",
+    location: "Patna",
+    category: "Master Planning",
+    slug: generateSlug("AIR Harinagar"),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A large-scale master planning proposal focused on creating a cohesive and sustainable urban environment.",
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. The design integrates residential clusters, green corridors, and civic infrastructure to create a balanced and efficient layout. Vehicular and pedestrian movement are carefully separated, while landscape elements enhance the overall spatial experience. Strategic zoning ensures optimal land use, environmental responsiveness, and long-term adaptability.",
+    images: [
+      "/air_harinagar_patna/Scene 57.webp",
+      "/air_harinagar_patna/NEW 11_2.webp",
+      "/air_harinagar_patna/NEW 10_2.webp",
+      "/air_harinagar_patna/Image_1.webp",
+      "/air_harinagar_patna/NEW 8_1.webp",
+      "/air_harinagar_patna/Scene 52_1.webp",
+      "/air_harinagar_patna/Scene 53_1.webp"
+    ],
+    area: "25 Acres",
+    status: "Ongoing",
+    architects: "Office Of Architecture, Ipsum Associates",
+  },
+
+  {
+    id: "16",
+    imageUrl: "/reqya_boutique/WhatsApp Image 2026-03-05 at 17.18.59.webp",
+    title: "Reya Boutique",
+    location: "Bangalore",
+    category: "Commercial",
+    slug: generateSlug("Reya Boutique"),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A boutique retail space designed to create an immersive and elegant shopping experience.",
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The interiors feature curated lighting, textured finishes, and flexible display systems that adapt to seasonal collections. Spatial planning emphasizes customer flow, visual merchandising, and a refined brand identity, resulting in a compact yet impactful retail environment.",
+    images: [
+      "/reqya_boutique/WhatsApp Image 2026-03-05 at 17.18.59.webp",
+      "/reqya_boutique/REYA BOUTIQUE - 01122025_Page_1_Image_0002.webp",
+      "/reqya_boutique/REYA BOUTIQUE - 01122025_Page_3_Image_0002.webp",
+      "/reqya_boutique/WhatsApp Image 2026-03-05 at 17.18.59 (1).webp",
+      "/reqya_boutique/REYA BOUTIQUE - 01122025_Page_2_Image_0002.webp",
+      "/reqya_boutique/WhatsApp Image 2026-03-05 at 17.19.01.webp",
+      "/reqya_boutique/WhatsApp Image 2026-03-05 at 17.18.56.webp"
+    ],
+    area: "1500 Sq.Ft",
+    status: "Completed",
+    architects: "Office Of Architecture, Design Collective",
+  },
+
+  {
+    id: "17",
+    imageUrl: "/ORR_Kempapura/A3.webp",
+    title: "ORR Kempapura",
+    location: "Bangalore",
+    category: "Commercial",
+    slug: generateSlug("ORR Kempapura"),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A contemporary commercial development positioned along a key urban corridor.",
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The project focuses on maximizing frontage and visibility while maintaining efficient floor plates. Architectural expression is defined by clean lines, shaded glazing, and material contrast. The development integrates parking, retail interfaces, and office spaces into a cohesive urban block.",
+    images: [
+      "/ORR_Kempapura/A3.webp",
+      "/ORR_Kempapura/A2.webp",
+      "/ORR_Kempapura/A5.webp",
+      "/ORR_Kempapura/A.webp",
+      "/ORR_Kempapura/2.webp",
+      "/ORR_Kempapura/3.webp",
+      "/ORR_Kempapura/1.webp"
+    ],
+    area: "9000 Sq.Ft",
+    status: "Ongoing",
+    architects: "Office Of Architecture, Studio Grid",
+  },
+
+  {
+    id: "18",
+    imageUrl: "/uniflex/c7593700-4172-4b28-b305-77e062ca995d.webp",
+    title: "Uniflex",
+    location: "Bangalore",
+    category: "Commercial",
+    slug: generateSlug("Uniflex"),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A flexible commercial workspace designed to accommodate evolving business needs.",
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The project emphasizes modular planning, allowing spaces to adapt between office, showroom, and collaborative environments. Material palettes are kept minimal and modern, while lighting and acoustics are carefully designed to enhance productivity and comfort.",
+    images: [
+      "/uniflex/c7593700-4172-4b28-b305-77e062ca995d.webp",
+      "/uniflex/0793892a-0e35-4852-8665-ba3b9dd7da45.webp",
+      "/uniflex/WhatsApp Image 2025-03-12 at 15.31.36.webp",
+      "/uniflex/1dd1ed58-e7c3-4dd0-ba93-37d550280743.webp",
+      "/uniflex/Scene 23_2.webp",
+      "/uniflex/QQQQQ.webp",
+      "/uniflex/QQQQQ_AO.webp",
+      "/uniflex/Scene 26.webp",
+      "/uniflex/Scene 29_1.webp",
+      "/uniflex/Scene 16_2.webp"
+    ],
+    area: "11000 Sq.Ft",
+    status: "Completed",
+    architects: "Office Of Architecture, Lorem Group",
+  },
+  {
+    id: "19",
+    imageUrl: "/ecity/a98e277d-ff55-47ec-b101-bf27352c6adb.webp",
+    title: "E City",
+    location: "bangalore",
+    category: "Commercial",
+    slug: generateSlug("E City"),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A flexible commercial workspace designed to accommodate evolving business needs.",
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The project emphasizes modular planning, allowing spaces to adapt between office, showroom, and collaborative environments. Material palettes are kept minimal and modern, while lighting and acoustics are carefully designed to enhance productivity and comfort.",
+    images: [
+      "/ecity/a98e277d-ff55-47ec-b101-bf27352c6adb.webp",
+      "/ecity/c1756e9b-ddf8-4395-8e05-406a8f0e19d0.webp",
+      "/ecity/28948731-1ed5-42a6-82df-a264f2c0000b.webp",
+      "/ecity/b4acb6a5-c06c-460b-8824-c892855b77b4.webp",
+      "/ecity/5c3983bb-9637-4567-8a2d-ddf0692c774b.webp",
+      "/ecity/724815ea-b205-45d6-99c5-10fa7d0f3077.webp",
+      "/ecity/c18b687e-efca-4e2f-95ad-9d94a33397b8.webp"
+    ],
+    area: "11000 Sq.Ft",
+    status: "Completed",
+    architects: "Office Of Architecture, Lorem Group",
+  },
 ];
