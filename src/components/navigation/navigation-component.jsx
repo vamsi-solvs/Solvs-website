@@ -11,7 +11,7 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 const navItems = [
   { label: "Work", href: "/work" },
   { label: "Studio", href: "/studio" },
-  { label: "Career", href: "/career" },
+  // { label: "Career", href: "/career" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -38,24 +38,24 @@ export default function Navigation() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-12">
-                <ul className="flex items-center gap-12">
-                    {navItems.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className={cn(
-                            "font-normal text-[24px] tracking-wide transition-opacity",
-                            isHome
-                              ? "text-white hover:opacity-80"
-                              : pathname.startsWith(item.href)
-                              ? "text-gray-900 dark:text-white"
-                              : "text-[#888888] hover:text-gray-900 dark:hover:text-white"
-                          )}>
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                </ul>
+          <ul className="flex items-center gap-12">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={cn(
+                    "font-normal text-[24px] tracking-wide transition-opacity",
+                    isHome
+                      ? "text-gray-900 hover:opacity-80"
+                      : pathname.startsWith(item.href)
+                        ? "text-gray-900 dark:text-white"
+                        : "text-[#888888] hover:text-gray-900 dark:hover:text-white"
+                  )}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Mobile Navigation */}

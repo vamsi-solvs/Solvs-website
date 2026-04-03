@@ -46,8 +46,10 @@ const ProjectCarousel = ({ images = [] }) => {
                     alt={`Project image ${index + 1}`}
                     width={1200}
                     height={800}
-                    className="h-full w-auto object-contain"
                     priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    sizes="100vw"
+                    className="h-full w-auto object-contain"
                   />
                   
                   {/* Left clickable area */}

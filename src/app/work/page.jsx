@@ -63,7 +63,7 @@ export default function WorkPage() {
             columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
           >
             <Masonry gutter="64px" className="w-full!">
-              {filteredProjects.map((project) => (
+              {filteredProjects.map((project, index) => (
                 <div
                   key={project.id}
                   className="group relative overflow-hidden cursor-pointer"
@@ -75,6 +75,9 @@ export default function WorkPage() {
                       alt={project.title}
                       width={800}
                       height={600}
+                      priority={index === 0}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                     />
 
