@@ -491,7 +491,7 @@ export const projects = [
 
   {
     id: "17",
-    imageUrl: "/ORR_Kempapura/A3.webp",
+    imageUrl: "/ORR/north wesr view day.webp",
     title: "ORR Kempapura",
     location: "Bangalore",
     category: "Commercial",
@@ -501,13 +501,16 @@ export const projects = [
     details:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The project focuses on maximizing frontage and visibility while maintaining efficient floor plates. Architectural expression is defined by clean lines, shaded glazing, and material contrast. The development integrates parking, retail interfaces, and office spaces into a cohesive urban block.",
     images: [
-      "/ORR_Kempapura/A3.webp",
-      "/ORR_Kempapura/A2.webp",
-      "/ORR_Kempapura/A5.webp",
-      "/ORR_Kempapura/A.webp",
-      "/ORR_Kempapura/2.webp",
-      "/ORR_Kempapura/3.webp",
-      "/ORR_Kempapura/1.webp"
+      "/ORR/north wesr view day.webp",
+      "/ORR/r7.webp",
+      "/ORR/front view night.webp",
+      "/ORR/r3_1.webp",
+      "/ORR/22.webp",
+      "/ORR/4.webp",
+      "/ORR/r2_2.webp",
+      "/ORR/6.webp",
+      "/ORR/1.webp",
+      "/ORR/Image.webp"
     ],
     area: "9000 Sq.Ft",
     status: "Ongoing",
@@ -565,4 +568,108 @@ export const projects = [
     status: "Completed",
     architects: "Office Of Architecture, Lorem Group",
   },
+  {
+    id: "20",
+    imageUrl: "/Bothra Residence/SSP0170.webp",
+    title: "Bothra Residence",
+    location: "Bangalore",
+    category: "Residential",
+    slug: generateSlug("Bothra Residence"),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A contemporary residence designed to balance comfort, spatial openness, and refined material expression.",
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The design emphasizes natural light, ventilation, and seamless indoor-outdoor connections. Carefully selected materials and textures create a warm and cohesive living environment tailored for modern lifestyles.",
+    images: [
+      "/Bothra Residence/SSP0170.webp",
+      "/Bothra Residence/SSP9960-Edit.webp",
+      "/Bothra Residence/SSP0163.webp",
+      "/Bothra Residence/SSP0177.webp",
+      "/Bothra Residence/SSP0215.webp",
+      "/Bothra Residence/SSP0027-Edit.webp",
+      "/Bothra Residence/SSP0018-Edit.webp",
+      "/Bothra Residence/SSP0137.webp",
+      "/Bothra Residence/SSP9972-Edit.webp",
+      "/Bothra Residence/SSP9997-Edit.webp",
+      "/Bothra Residence/SSP0011-Edit.webp",
+      "/Bothra Residence/SSP0196.webp",
+      "/Bothra Residence/SSP9926-Edit.webp"
+    ],
+    area: "8500 Sq.Ft",
+    status: "Ongoing",
+    architects: "Office Of Architecture, Lorem Associates",
+  },
+  {
+    id: "21",
+    imageUrl: "/Hosur SCT/5.webp",
+    title: "Hosur SCT",
+    location: "Bangalore",
+    category: "Commercial",
+    slug: generateSlug("Hosur SCT"),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A contemporary commercial development designed to enhance visibility, efficiency, and user experience.",
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The project focuses on flexible planning, efficient circulation, and a strong architectural identity. Façade articulation and material contrast create a dynamic presence within the urban context.",
+    images: [
+      "/Hosur SCT/5.webp",
+      "/Hosur SCT/7.webp",
+      "/Hosur SCT/6.webp",
+      "/Hosur SCT/2.webp",
+      "/Hosur SCT/3.webp",
+      "/Hosur SCT/1.webp"
+    ],
+    area: "9000 Sq.Ft",
+    status: "Proposed",
+    architects: "Office Of Architecture, Ipsum Associates",
+  },
+  {
+    id: "22",
+    imageUrl: "/nspira Tree of Life/JA2.webp",
+    title: "Inspira Tree of Life",
+    location: "Bangalore",
+    category: "Residential",
+    slug: generateSlug("Inspira Tree of Life"),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A residential development inspired by nature, emphasizing wellness, community, and sustainable living.",
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The design integrates landscaped open spaces, natural materials, and climate-responsive planning to create a serene and balanced living environment.",
+    images: [
+      "/nspira Tree of Life/JA2.webp",
+      "/nspira Tree of Life/VA2.webp",
+      "/nspira Tree of Life/S2.webp",
+      "/nspira Tree of Life/VB2.webp",
+      "/nspira Tree of Life/JB2.webp"
+    ],
+    area: "10000 Sq.Ft",
+    status: "Ongoing",
+    architects: "Office Of Architecture, Green Studio",
+  },
+  {
+    id: "23",
+    imageUrl: "/Koushik Residence and Interiors/MB-2_1.webp",
+    title: "Koushik Residence and Interiors",
+    location: "Bangalore",
+    category: "Residential",
+    slug: generateSlug("Koushik Residence and Interiors"),
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A holistic residential and interior design project combining architectural clarity with refined interior detailing.",
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The project seamlessly blends structure and interiors, with a focus on spatial continuity, material harmony, and a warm, inviting ambiance.",
+    images: [
+      "/Koushik Residence and Interiors/MB-2_1.webp",
+      "/Koushik Residence and Interiors/F1_1.webp",
+      "/Koushik Residence and Interiors/L6(1).webp",
+      "/Koushik Residence and Interiors/DB-4_1.webp",
+      "/Koushik Residence and Interiors/D4.webp",
+      "/Koushik Residence and Interiors/D3.webp",
+      "/Koushik Residence and Interiors/F7_1.webp",
+      "/Koushik Residence and Interiors/ele.webp",
+      "/Koushik Residence and Interiors/D6_1.webp",
+      "/Koushik Residence and Interiors/1 NIGHT.webp",
+      "/Koushik Residence and Interiors/DB-1_1.webp",
+      "/Koushik Residence and Interiors/F4_1.webp"
+    ],
+    area: "7500 Sq.Ft",
+    status: "Completed",
+    architects: "Office Of Architecture, Design Collective",
+  }
 ];

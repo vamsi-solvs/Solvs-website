@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -19,6 +19,11 @@ const filterOptions = [
 export default function WorkPage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [isPending, startTransition] = useTransition();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleFilterChange = (value) => {
     startTransition(() => setActiveFilter(value));
@@ -27,6 +32,7 @@ export default function WorkPage() {
   const filteredProjects = projects.filter(
     (p) => activeFilter === "All" || p.category === activeFilter
   );
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -52,7 +58,7 @@ export default function WorkPage() {
 
       {/* Masonry Grid */}
       <div className="max-w-8xl mx-auto px-12 pb-20 pt-8">
-        {filteredProjects.length === 0 ? (
+        {!isMounted ? null : filteredProjects.length === 0 ? (
           <div className="flex items-center justify-center h-[60vh]">
             <p className="text-gray-500 text-xl md:text-2xl font-medium">
               Coming Soon

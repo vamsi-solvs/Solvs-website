@@ -14,6 +14,12 @@ const nextConfig = {
       },
     ],
   },
+  // Allow large image uploads through API routes (default is 4 MB)
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "50mb",
+    },
+  },
 };
 
 export default nextConfig;
